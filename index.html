@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.amber-orange.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+
+    <title>Codet Games</title>
+
+    <style type="text/css">
+      .red-gradient {
+        background: #f12711; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f5af19,
+          #f12711
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f5af19,
+          #f12711
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .redder-gradient {
+        background: #ed213a; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #93291e,
+          #ed213a
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #93291e,
+          #ed213a
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .card-square {
+        width: 320px;
+        height: 320px;
+      }
+
+      .orange {
+        background: orange;
+      }
+
+      #demo-card-square {
+        color: #fff;
+        background: url("../assets/demos/dog.png") bottom right 15% no-repeat
+          #46b6ac;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="mdl-layout__content red-gradient" id="content">
+      <div class="page-content" style="width: 100vw;">
+        <center>
+          <h1
+            class="mb-3 text-white"
+            style="font-size: 80px; margin-top: 50px; line-height: 90%;"
+          >
+            Codet Games
+          </h1>
+        </center>
+
+        <div class="container" style="height: 100vh; margin-top: 50px;">
+          <div class="row justify-content-md-center">
+            <div class="col-sm d-flex justify-content-center mt-2">
+              <card
+                title=""
+                description="Pop the droplets to earn more points."
+                author="Tony Xin"
+                imgurl="droplets.png"
+                authorlink="http://tonyxin.epizy.com/?i=1"
+              ></card>
+            </div>
+            <div class="col-sm d-flex justify-content-center mt-2">
+              <card></card>
+            </div>
+            <div class="col-sm d-flex justify-content-center mt-2">
+              <card></card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      Vue.component("card", {
+        template:
+          '<div class="card-square mdl-card mdl-shadow--2dp orange">\
+              <div class="mdl-card__title mdl-card--expand" :style="style">\
+                <h2 class="mdl-card__title-text">{{ title }}</h2>\
+              </div>\
+              <div class="mdl-card__supporting-text">\
+                <center>{{ description }}<br \><span style="font-size: 10px;">Created by <a :href="authorlink" target="_blank">{{ author }}</a></span></center>\
+              </div>\
+              <div class="mdl-card__actions mdl-card--border">\
+                <center>\
+                  <a\
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" :href="downloadlink"\
+                  >\
+                    Download</a\
+                  ><a\
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" :href="codelink"\
+                  >\
+                    View Code\
+                  </a>\
+                </center>\
+              </div>\
+            </div>\
+        ',
+        props: ["title", "description", "downloadlink", "codelink", "imgurl", "author", "authorlink"],
+        computed: {
+          style () {
+            return 'background: url("images/' + this.imgurl + '") center 15% no-repeat #ffffff';
+          }
+        },
+      });
+
+      new Vue({
+        el: "#content",
+        data: {},
+        methods: {}
+      });
+    </script>
+  </body>
+</html>
