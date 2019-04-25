@@ -21,8 +21,9 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
 
     <title>Codet Games</title>
 
@@ -69,34 +70,58 @@
         background: url("../assets/demos/dog.png") bottom right 15% no-repeat
           #46b6ac;
       }
+
+      #logo-div {
+        height: 100vh; 
+        width: 100vw; 
+        background-color: rgb(255, 125, 0);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 100;
+        animation-delay: 0.2s;
+      }
     </style>
   </head>
 
   <body>
     <main class="mdl-layout__content red-gradient" id="content">
       <div class="page-content" style="width: 100vw;">
+
+        <div id="logo-div" class="animated fadeOutUp">
+          <center><img src="images/CodetLogo.jpg" style="height: 100vh;"></center>
+        </div>
+
         <center>
           <h1
-            class="mb-3 text-white"
-            style="font-size: 80px; margin-top: 50px; line-height: 90%;"
+            class="mb-3 text-white animated bounceIn slow"
+            style="font-size: 100px; margin-top: 50px; line-height: 90%;"
           >
             Codet Games
           </h1>
         </center>
 
-        <div class="container" style="height: 100vh; margin-top: 50px;">
+        <div class="container" style="min-height: 100vh; margin-top: 50px; padding-bottom: 100px;">
           <div class="row justify-content-md-center">
             <div class="col-sm d-flex justify-content-center mt-2">
               <card
-                title=""
+                title="Droplets"
                 description="Pop the droplets to earn more points."
                 author="Tony Xin"
                 imgurl="droplets.png"
                 authorlink="http://tonyxin.epizy.com/?i=1"
+                downloadlink="programs/Droplets.jar"
               ></card>
             </div>
             <div class="col-sm d-flex justify-content-center mt-2">
-              <card></card>
+              <card
+                title="Poker"
+                description="Draw cards and test your luck."
+                author="Tony Xin"
+                imgurl="poker.png"
+                authorlink="http://tonyxin.epizy.com/?i=1"
+                downloadlink="programs/Poker.jar">
+              </card>
             </div>
             <div class="col-sm d-flex justify-content-center mt-2">
               <card></card>
@@ -123,11 +148,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/wow.js"></script>
 
     <script>
       Vue.component("card", {
         template:
-          '<div class="card-square mdl-card mdl-shadow--2dp orange">\
+          '<div class="card-square mdl-card mdl-shadow--2dp orange wow fadeIn" style="height: 390px;">\
               <div class="mdl-card__title mdl-card--expand" :style="style">\
                 <h2 class="mdl-card__title-text">{{ title }}</h2>\
               </div>\
@@ -137,7 +163,7 @@
               <div class="mdl-card__actions mdl-card--border">\
                 <center>\
                   <a\
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" :href="downloadlink"\
+                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" :href="downloadlink" download\
                   >\
                     Download</a\
                   ><a\
@@ -162,6 +188,8 @@
         data: {},
         methods: {}
       });
+
+      new WOW().init();
     </script>
   </body>
 </html>
