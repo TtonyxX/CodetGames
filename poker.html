@@ -81,57 +81,73 @@
         z-index: 100;
         animation-delay: 0.2s;
       }
+
+      @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+      body .gist .gist-file {
+          margin-bottom: 0;
+          border: 1px dashed #adb5bd;
+          border-radius: 0;
+      }
+
+      body .gist .gist-data {
+          border-bottom: none;
+          border-radius: 0;
+          background-color: #f1f3f5;
+      }
+
+      body .gist .blob-wrapper {
+          border-radius: 0;
+      }
+
+      body .gist .highlight {
+          background-color: transparent;
+          font-family: 'Droid Sans Mono', monospace;
+          font-size: 14px;
+      }
+
+      body .gist .highlight td {
+          padding: 5px 15px !important;
+          line-height: 1;
+          font-family: inherit;
+          font-size: inherit;
+      }
+
+      body .gist tr:first-child td {
+          padding-top: 15px !important;
+      }
+
+      body .gist tr:last-child td {
+          padding-bottom: 15px !important;
+      }
+
+      body .gist .blob-num {
+          color: #ced4da;
+          background-color: #495057;
+          pointer-events: none;
+      }
+
+      body .gist .gist-meta {
+          display: none;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus,
+      button:focus {
+          outline: none;
+      }
+
+      textarea {
+        border-radius: 10px;
+      }
+
     </style>
+
+
   </head>
 
   <body>
-    <main class="mdl-layout__content red-gradient" id="content">
-      <div class="page-content" style="width: 100vw;">
-
-        <div id="logo-div" class="animated fadeOutUp">
-          <center><img src="images/CodetLogo.jpg" style="height: 100vh;"></center>
-        </div>
-
-        <center>
-          <h1
-            class="mb-3 text-white animated bounceIn slow"
-            style="font-size: 100px; margin-top: 50px; line-height: 90%;"
-          >
-            Codet Games
-          </h1>
-        </center>
-
-        <div class="container" style="min-height: 100vh; margin-top: 50px; padding-bottom: 100px;">
-          <div class="row justify-content-md-center">
-            <div class="col-sm d-flex justify-content-center mt-2">
-              <card
-                title="Droplets"
-                description="Pop the droplets to earn more points."
-                author="Tony Xin"
-                imgurl="droplets.png"
-                authorlink="http://tonyxin.epizy.com/?i=1"
-                downloadlink="programs/Droplets.jar"
-                codelink="droplets.html"
-              ></card>
-            </div>
-            <div class="col-sm d-flex justify-content-center mt-2">
-              <card
-                title="Poker"
-                description="Draw cards and test your luck."
-                author="Tony Xin"
-                imgurl="poker.png"
-                authorlink="http://tonyxin.epizy.com/?i=1"
-                downloadlink="programs/Poker.jar"
-                codelink="poker.html">
-              </card>
-            </div>
-            <div class="col-sm d-flex justify-content-center mt-2">
-              <card></card>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script
@@ -151,39 +167,10 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/wow.js"></script>
+    <script src="https://gist.github.com/TtonyxX/026706ea0fd929b856dfbdfa48a20ee9.js"></script>
 
     <script>
-      Vue.component("card", {
-        template:
-          '<div class="card-square mdl-card mdl-shadow--2dp orange wow fadeIn" style="height: 390px;">\
-              <div class="mdl-card__title mdl-card--expand" :style="style">\
-                <h2 class="mdl-card__title-text">{{ title }}</h2>\
-              </div>\
-              <div class="mdl-card__supporting-text">\
-                <center>{{ description }}<br \><span style="font-size: 10px;">Created by <a :href="authorlink" target="_blank">{{ author }}</a></span></center>\
-              </div>\
-              <div class="mdl-card__actions mdl-card--border">\
-                <center>\
-                  <a\
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" :href="downloadlink" download\
-                  >\
-                    Download</a\
-                  ><a\
-                    class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank" :href="codelink"\
-                  >\
-                    View Code\
-                  </a>\
-                </center>\
-              </div>\
-            </div>\
-        ',
-        props: ["title", "description", "downloadlink", "codelink", "imgurl", "author", "authorlink"],
-        computed: {
-          style () {
-            return 'background: url("images/' + this.imgurl + '") center 15% no-repeat #ffffff';
-          }
-        },
-      });
+      
 
       new Vue({
         el: "#content",
@@ -192,6 +179,29 @@
       });
 
       new WOW().init();
+
+      $("#code-display").html(`package droplet;
+
+import javax.swing.JFrame;
+
+public class Droplets {
+
+  public static void main(String[] args) {
+    
+    JFrame frame = new JFrame();
+    Screen sc = new Screen();
+    frame.add(sc);
+
+    frame.pack();
+    frame.setVisible(true);
+    
+    sc.animate();
+
+  }
+
+}
+`);
+
     </script>
   </body>
 </html>
