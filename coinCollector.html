@@ -1,0 +1,196 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.amber-orange.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+
+    <title>Codet Games</title>
+
+    <style type="text/css">
+      .red-gradient {
+        background: #f12711; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f5af19,
+          #f12711
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f5af19,
+          #f12711
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .redder-gradient {
+        background: #ed213a; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #93291e,
+          #ed213a
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #93291e,
+          #ed213a
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .card-square {
+        width: 320px;
+        height: 320px;
+      }
+      .orange {
+        background: orange;
+      }
+      #demo-card-square {
+        color: #fff;
+        background: url("../assets/demos/dog.png") bottom right 15% no-repeat
+          #46b6ac;
+      }
+      #logo-div {
+        height: 100vh; 
+        width: 100vw; 
+        background-color: rgb(255, 125, 0);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 100;
+        animation-delay: 0.2s;
+      }
+      @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+      body .gist .gist-file {
+          margin-bottom: 0;
+          border: 1px dashed #adb5bd;
+          border-radius: 0;
+      }
+      body .gist .gist-data {
+          border-bottom: none;
+          border-radius: 0;
+          background-color: #f1f3f5;
+      }
+      body .gist .blob-wrapper {
+          border-radius: 0;
+      }
+      body .gist .highlight {
+          background-color: transparent;
+          font-family: 'Droid Sans Mono', monospace;
+          font-size: 14px;
+      }
+      body .gist .highlight td {
+          padding: 5px 15px !important;
+          line-height: 1;
+          font-family: inherit;
+          font-size: inherit;
+      }
+      body .gist tr:first-child td {
+          padding-top: 15px !important;
+      }
+      body .gist tr:last-child td {
+          padding-bottom: 15px !important;
+      }
+      body .gist .blob-num {
+          color: #ced4da;
+          background-color: #495057;
+          pointer-events: none;
+      }
+      body .gist .gist-meta {
+          display: none;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus,
+      button:focus {
+          outline: none;
+      }
+      textarea {
+        border-radius: 10px;
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <!--
+    <main class="mdl-layout__content red-gradient" id="content">
+      <div class="page-content" style="width: 100vw; height: 100vh;">
+        <div class="btn-group-vertical" style="position: fixed;">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            Droplets.java
+          </button>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            Button
+          </button>
+        </div>
+        <center><PRE><CODE CLASS=Java><textarea readonly class="mt-3" id="code-display" style="height: 90vh; width: 70vw;">
+</textarea></CODE></PRE></center>
+      </div>
+    </main>
+    -->
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="https://gist.github.com/TtonyxX/4a7b2078acc3db93704914b35c63875e.js"></script>
+
+    <script>
+      
+      new Vue({
+        el: "#content",
+        data: {},
+        methods: {}
+      });
+      new WOW().init();
+      $("#code-display").html(`package droplet;
+import javax.swing.JFrame;
+public class Droplets {
+  public static void main(String[] args) {
+    
+    JFrame frame = new JFrame();
+    Screen sc = new Screen();
+    frame.add(sc);
+    frame.pack();
+    frame.setVisible(true);
+    
+    sc.animate();
+  }
+}
+`);
+    </script>
+  </body>
+</html>
