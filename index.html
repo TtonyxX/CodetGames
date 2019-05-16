@@ -120,6 +120,7 @@
                 authorlink="http://tonyxin.epizy.com/?i=1"
                 downloadlink="programs/Droplets.jar"
                 codelink="droplets.html"
+                color="ffffff"
               ></card>
             </div>
             <div class="col-sm d-flex justify-content-center mt-2">
@@ -130,7 +131,8 @@
                 imgurl="poker.png"
                 authorlink="http://tonyxin.epizy.com/?i=1"
                 downloadlink="programs/Poker.jar"
-                codelink="poker.html">
+                codelink="poker.html"
+                color="ffffff">
               </card>
             </div>
             <div class="col-sm d-flex justify-content-center mt-2">
@@ -141,7 +143,8 @@
                 imgurl="coinCollector.png"
                 authorlink="http://tonyxin.epizy.com/?i=1"
                 downloadlink="programs/coinCollector.zip"
-                codelink="coinCollector.html">
+                codelink="coinCollector.html"
+                color="D3D3D3">
               </card>
             </div>
             <div class="col-sm d-flex justify-content-center mt-2">
@@ -196,10 +199,10 @@
               </div>\
             </div>\
         ',
-        props: ["title", "description", "downloadlink", "codelink", "imgurl", "author", "authorlink"],
+        props: ["title", "description", "downloadlink", "codelink", "imgurl", "author", "authorlink", "color"],
         computed: {
           style () {
-            return 'background: url("images/' + this.imgurl + '") center 15% no-repeat #ffffff';
+            return 'background: url("images/' + this.imgurl + '") center 15% no-repeat #' + this.color;
           }
         },
       });
